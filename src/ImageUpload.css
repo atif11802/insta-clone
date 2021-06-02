@@ -1,0 +1,23 @@
+.ImageUpload{
+    display:flex;
+    flex-direction:column;
+    width:60%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    
+}
+.ImageUpload__progress{
+    width:100%;
+
+}
+.ImageUpload__caption{
+    height: 40px;
+}
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+/* finished at  2 49 41 */
