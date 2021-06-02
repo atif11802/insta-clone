@@ -29,12 +29,14 @@ function Post({image,caption,username,code,displayName}) {
     
 
     const deletepost = () =>{
+        
       
-       
+    
         if(user.displayName===null)
         {
 
-        }else{
+        }
+        else{
             
             if(username===user.displayName){
                 db.collection("posts").doc(code)
@@ -44,6 +46,9 @@ function Post({image,caption,username,code,displayName}) {
             }).catch((error) => {
                 console.error("Error removing document: ", error);
             });
+            }
+            else if(username !== user.displayName){
+                alert("you cannot delete other user's photo")
             }
         }
           
@@ -66,7 +71,10 @@ function Post({image,caption,username,code,displayName}) {
 
                 </div>
             
-            <ClearIcon onClick={deletepost} className="button"  />
+            {
+                user && username===user.displayName ? <ClearIcon onClick={deletepost} className="button"  />: ""
+            }
+            
 
 
 
